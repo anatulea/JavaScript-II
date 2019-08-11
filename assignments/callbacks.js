@@ -77,15 +77,10 @@ contains("Gum", items, (finder) => {
 // removeDuplicates removes all duplicate values from the given array.
 // Pass the duplicate free array to the callback function.
 // Do not mutate the original array.
+let arr = [78, 3, 56, 99, 3, 56, 77, 99, 77, 87, 32, 42];
+
+let unique = arr.filter((item, i, ar) => ar.indexOf(item) === i);
+
+console.log(unique);
 
 
-// Array.prototype.unique = function() {
-//   let values = [78, 3, 56, 99, 3, 56, 77, 99, 77, 87, 32, 42];
- 
-//   for (let i=0, values.length, i++)
-//       if (values.indexOf(values[i]) === -1)
-//       new1.push(values[i]);
-//   return new1;
-// }
-// let new1 = [];
-// console.log(new1);
