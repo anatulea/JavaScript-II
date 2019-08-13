@@ -39,7 +39,9 @@ console.log(newCounter());
     let increment  =  () => count += 1;
     let decrement  = () => count -= 1;
     let newCount = {increment, decrement};
-    };
-    const newCount=counterFactory();
+    return newCount;
+  };
+    
+    let newCount=counterFactory();
     console.log(newCount);
 
