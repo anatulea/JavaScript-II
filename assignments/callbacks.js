@@ -105,7 +105,29 @@ console.log("Is present:", isPresent("Gum", items));
 let arr = [78, 3, 56, 99, 3, 56, 77, 99, 77, 87, 32, 42];
 
 let unique = arr.filter((item, i, ar) => ar.indexOf(item) === i);
+let uniqueNot = arr.filter((item, i, ar) => ar.indexOf(item) !== i);
 
-console.log(unique);
+console.log("Unique:", unique);
+console.log("Not Unique:", uniqueNot);
+//---------------------
+let newUnique = arr.filter(function (item, i, whatever){
+ return whatever.indexOf(item)===i;
+});
 
+console.log ("Long way", newUnique);
+
+//----------------------------------------
+const removeDuplicates = (array, cb) => {
+  var mySet = new Set(array);
+  cb([...mySet]);
+};
+removeDuplicates(arr, uniqueNumbers => {
+  console.log(`Numbers with duplicates removed: ${uniqueNumbers}`);
+});
+
+//------------
+let newArrUnique = arr.filter((item, i, number)=>{
+  return number.indexOf(item)===i;
+ });
+console.log (newArrUnique)  
 

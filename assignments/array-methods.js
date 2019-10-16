@@ -463,7 +463,6 @@ runners.forEach((names => {
 }));
 console.log(fullName);
 
-
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER.
 // Convert each first name into all caps and log the result
@@ -487,6 +486,7 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations
 // into a ticketPriceTotal array and log the result
+
 let ticketPriceTotal = runners.reduce((total, runner) => total += runner.donation, 0);
 
 console.log(ticketPriceTotal);
@@ -509,8 +509,10 @@ goodDonor(runners, function (participant) {
 })
 
 //this workes too==>
-// let goodRunner = runners.filter((runner)=>runner.donation >= 150);
-// console.log(goodRunner);
+let goodRunner = runners.filter((runner)=>{ return runner.donation >= 150;
+});
+console.log ("xxxxxx",goodRunner.map(money=>{
+    return `${money.first_name} donated $${money.donation}`}))
 
 //Problem 2
 //list participants name in alphabetical order
@@ -522,6 +524,14 @@ const firstNameAlph = (arrRun) => {
 };
 runners.map(firstNameAlph);
 console.log(alph);
+
+//-------------------->>>>
+let alph2 = [];
+runners.map ((arrRun) => {
+    alph2.push(`${arrRun.last_name}`)
+    alph2.sort()
+});
+console.log(" Alphabetial 2nd way", alph2);
 
 // Problem 3
 //Make each participant say their first and last name
